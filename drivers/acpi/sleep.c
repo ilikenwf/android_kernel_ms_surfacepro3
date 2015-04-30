@@ -629,6 +629,7 @@ static int acpi_freeze_begin(void)
 
 static int acpi_freeze_prepare(void)
 {
+	acpi_enable_wakeup_devices(ACPI_STATE_S0);
 	acpi_enable_all_wakeup_gpes();
 	acpi_os_wait_events_complete();
 	enable_irq_wake(acpi_gbl_FADT.sci_interrupt);

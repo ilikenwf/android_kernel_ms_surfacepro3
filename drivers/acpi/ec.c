@@ -1101,6 +1101,9 @@ static int acpi_ec_add(struct acpi_device *device)
 
        acpi_walk_dep_device_list(device->handle);
 
+	/* Reprobe devices depending on the EC */
+	acpi_walk_dep_device_list(ec->handle);
+
 	/* EC is fully operational, allow queries */
 	clear_bit(EC_FLAGS_QUERY_PENDING, &ec->flags);
 

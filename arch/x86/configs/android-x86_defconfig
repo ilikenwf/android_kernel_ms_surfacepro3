@@ -2,6 +2,10 @@
 # Automatically generated file; DO NOT EDIT.
 # Linux/x86 4.0.0 Kernel Configuration
 #
+
+CONFIG_SURFACE_BUTTON=y
+CONFIG_HID_MULTITOUCH=y
+
 # CONFIG_64BIT is not set
 CONFIG_X86_32=y
 CONFIG_X86=y

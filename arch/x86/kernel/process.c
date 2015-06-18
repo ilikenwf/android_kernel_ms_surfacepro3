@@ -275,14 +275,12 @@ static inline void play_dead(void)
 void enter_idle(void)
 {
 	this_cpu_write(is_idle, 1);
-	idle_notifier_call_chain(IDLE_START);
 }
 
 static void __exit_idle(void)
 {
 	if (x86_test_and_clear_bit_percpu(0, is_idle) == 0)
 		return;
-	idle_notifier_call_chain(IDLE_END);
 }
 
 /* Called from interrupts to signify idle end */
